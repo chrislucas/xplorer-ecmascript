@@ -1,3 +1,6 @@
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+
 var p = [10,23,45,123,459];
 
 console.log(p.map(e => { return e % 3}))
