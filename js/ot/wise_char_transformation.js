@@ -11,10 +11,10 @@ let tdi = (oDelete, oInsert) => {
 
 }
 
-
 let tdd = (oDelete1, oDelete2) => {
-	
+
 }
+
 class Operation {
 	constructor(target, char = '', pos) {
 		this.target = target;
