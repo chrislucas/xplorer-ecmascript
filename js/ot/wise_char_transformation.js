@@ -2,15 +2,15 @@
 let tii = (oInsert1, oInsert2) => {
 
 };
-
+// insert-delete
 let tid = (oInsert, oDelete) => {
 
 }
-
+// delete-insert
 let tdi = (oDelete, oInsert) => {
 
 }
-
+// delete-delete
 let tdd = (oDelete1, oDelete2) => {
 
 }

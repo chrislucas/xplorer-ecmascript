@@ -10,7 +10,7 @@ console.log(p.map(e => { return e % 3}))
 let summation = p.reduce( (acc, val, idx, arr) => acc + val);
 console.log(summation);
 
-// fao envolver o corpo da funcao com parenteses podemos faze-la retornar
+// ao envolver o corpo da funcao com parenteses podemos faze-la retornar
 // um objeto literal
 let test = (x) => ({resultado: summation % x})
 
