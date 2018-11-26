@@ -60,10 +60,35 @@ let test_iterables = function() {
 	}
 }
 
+/**
+	Diferencas entre for .. in e for .. of
+	"for .. in" : itera sobre todas as propriedades enumeraveis de um objeto
+*/
+
+let test_for_in = () => {
+	Array.prototype.customPropArray = function () {}
+	Object.prototype.customPropObject = function () {}
+	let arr =new Array(1,2,3,4, "teste")
+	for (let prop in arr) {
+		console.log(prop)
+	}
+
+	console.log("==================")
+
+	/**
+		"for .. of" : Itera sobre colecoes (Map, Set, Array) ao inves de objetos.
+		Ira iterar sobre os elementos da colecao que tiverem a propriedade [Symbol.iterator]
+	*/
+
+	for (let prop of arr) {
+		console.warn(Object.getOwnPropertyNames(prop));
+	}
+
+}
 
 
 
-test_iterables()
+test_for_in()
 
 
 
