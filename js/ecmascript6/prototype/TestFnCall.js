@@ -7,7 +7,6 @@ var fn = function () {
 
 var arrowFn = () => {
 	console.log("Typeof %s, arg1: %s", typeof this);
-
 	for(let i of arguments) {
 		console.log(i)
 	}

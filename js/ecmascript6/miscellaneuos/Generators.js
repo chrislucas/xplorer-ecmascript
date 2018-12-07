@@ -4,6 +4,10 @@
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#iterable
 
+/*
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
+*/
+
 'use strict';
 
 
@@ -28,7 +32,6 @@ let fun_sample_1 = () => {
 
 // a sintaxe function * () define um generator
 
-
 function * fn(n) {
 	if(n < 2)
 		yield 1;
@@ -42,8 +45,44 @@ function * fn(n) {
 	}
 }
 
-let generator = fn(6)
-console.log(Array.from(generator))
+function testFnGenerator() {
+	let generator = fn(6)
+	console.log(Array.from(generator))
+}
+
+/*
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction
+*/
+function testGeneratorConstructorProperties() {
+	let fn = function * () {};
+	console.log(fn);
+	let props = Object.getPrototypeOf(fn);
+	console.log("Props: %o\nConstructor: %o", props, props['constructor'])
+}
+
+//testGeneratorConstructorProperties();
+
+
+function testAnonymousGenerator() {
+	let anon = function * (v) {
+		let p = 0;
+		let q = 1;
+		for(let i=0; i<v; i++) {
+			p += q;
+			q = p - q;
+			yield p;
+		}
+	};
+	let it = anon(10);
+	console.log(it.next());
+	console.log(it.next());
+	console.log(it.next());
+
+}
+
+
+testAnonymousGenerator();
+
 
 
 
