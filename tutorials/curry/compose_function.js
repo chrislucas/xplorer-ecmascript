@@ -7,3 +7,8 @@ let h = a => f(g(a))
 var x = 15
 console.log(compose(f, g, x))
 console.log(h(x))
+
+
+let wait = time => new Promise() {
+	(resolve, reject) => setTimeout(resolve, time)
+}
